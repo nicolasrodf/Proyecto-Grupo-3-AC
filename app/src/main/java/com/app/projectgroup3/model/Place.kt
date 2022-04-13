@@ -15,25 +15,11 @@ data class Place(
     @SerializedName("largeDescription")
     val largeDescription: String,
     @SerializedName("images")
-    val images : List<String>,
+    val images: List<String>,
     @SerializedName("location")
     val location: String,
     @SerializedName("latitude")
     val latitude: String,
     @SerializedName("longitude")
-    val longitude: String,
-
-    /*@SerializedName("backdrop_path") val backdropPath: String?,
-    @SerializedName("genre_ids") val genreIds: List<Int>,
-    val id: Int,
-    @SerializedName("original_language") val originalLanguage: String,
-    @SerializedName("original_title") val originalTitle: String,
-    val overview: String,
-    val popularity: Double,
-    @SerializedName("poster_path") val posterPath: String,
-    @SerializedName("release_date") val releaseDate: String,
-    val title: String,
-    val video: Boolean,
-    @SerializedName("vote_average") val voteAverage: Double,
-    @SerializedName("vote_count") val voteCount: Int*/
+    val longitude: String
 ) : Parcelable

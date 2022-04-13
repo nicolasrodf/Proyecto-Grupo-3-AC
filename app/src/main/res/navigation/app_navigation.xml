@@ -16,7 +16,11 @@
     </fragment>
     <fragment
         android:id="@+id/detailFragment"
-        android:name="com.app.projectgroup3.DetailFragment"
+        android:name="com.app.projectgroup3.ui.detail.DetailFragment"
         android:label="fragment_detail"
-        tools:layout="@layout/fragment_detail" />
+        tools:layout="@layout/fragment_detail" >
+        <argument
+            android:name="place"
+            app:argType="com.app.projectgroup3.model.Place" />
+    </fragment>
 </navigation>
