@@ -27,7 +27,10 @@ class PlacesAdapter(private val listener: (Place) -> Unit) :
         private val binding = ViewPlaceBinding.bind(view)
         fun bind(place: Place) = with(binding) {
             titleTextView.text = place.name
-            imageView.loadUrl(place.image)
+            descriptionTextView.text = place.shortDescription
+            if (place.images.isNotEmpty()) {
+                imageView.loadUrl(place.images[0])
+            }
         }
     }
 }

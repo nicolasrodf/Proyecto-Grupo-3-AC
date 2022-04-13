@@ -4,26 +4,17 @@ import android.os.Parcelable
 import com.google.gson.annotations.SerializedName
 import kotlinx.parcelize.Parcelize
 
-@Parcelize
-data class Place(
-    @SerializedName("id")
-    val id: String,
-    @SerializedName("name")
-    val name: String,
-    @SerializedName("shortDescription")
-    val shortDescription: String,
-    @SerializedName("largeDescription")
-    val largeDescription: String,
-    @SerializedName("images")
-    val images : List<String>,
-    @SerializedName("location")
-    val location: String,
-    @SerializedName("latitude")
-    val latitude: String,
-    @SerializedName("longitude")
-    val longitude: String,
+data class RemoteResult(
+    val page: Int,
+    val results: List<Place>,
+    @SerializedName("total_pages") val totalPages: Int,
+    @SerializedName("total_results") val totalResults: Int
+)
 
-    /*@SerializedName("backdrop_path") val backdropPath: String?,
+@Parcelize
+data class Movie(
+    val adult: Boolean,
+    @SerializedName("backdrop_path") val backdropPath: String?,
     @SerializedName("genre_ids") val genreIds: List<Int>,
     val id: Int,
     @SerializedName("original_language") val originalLanguage: String,
@@ -35,5 +26,5 @@ data class Place(
     val title: String,
     val video: Boolean,
     @SerializedName("vote_average") val voteAverage: Double,
-    @SerializedName("vote_count") val voteCount: Int*/
+    @SerializedName("vote_count") val voteCount: Int
 ) : Parcelable
