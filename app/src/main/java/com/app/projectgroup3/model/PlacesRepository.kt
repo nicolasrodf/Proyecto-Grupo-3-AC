@@ -1,13 +1,14 @@
 package com.app.projectgroup3.model
 
+import android.app.Application
 import androidx.appcompat.app.AppCompatActivity
 import com.app.projectgroup3.R
 import java.lang.Exception
 import java.util.ArrayList
 
-class PlacesRepository(activity:AppCompatActivity) {
-    private val apiKey = activity.getString(R.string.api_key)
-    private val regionRepository = RegionRepository(activity)
+class PlacesRepository(application: Application) {
+    private val apiKey = application.getString(R.string.api_key)
+    private val regionRepository = RegionRepository(application)
 
     suspend fun findPopularPlaces() :RemoteResult{
         try {

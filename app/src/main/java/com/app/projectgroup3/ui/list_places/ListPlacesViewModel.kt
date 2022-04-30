@@ -1,4 +1,4 @@
-package com.app.projectgroup3
+package com.app.projectgroup3.ui.list_places
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
@@ -16,25 +16,16 @@ class ListPlacesViewModel(
     private val _state = MutableStateFlow(UiState())
     val state: StateFlow<UiState> = _state.asStateFlow()
 
-    init {
-        refresh()
-    }
-
-    private fun refresh() {
+    fun onUiReady() {
         viewModelScope.launch {
             _state.value = UiState(loading = true)
             _state.value = UiState(places = placesRepository.findPopularPlaces().results)
         }
     }
 
-    fun onPlaceClicked(place: Place) {
-        _state.value = _state.value.copy(navigateTo = place)
-    }
-
     data class UiState(
         val loading: Boolean = false,
-        val places: List<Place>? = null,
-        val navigateTo: Place? = null
+        val places: List<Place>? = null
     )
 }
 

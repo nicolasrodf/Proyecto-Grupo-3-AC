@@ -2,30 +2,32 @@ package com.app.projectgroup3.model
 
 import android.Manifest
 import android.annotation.SuppressLint
+import android.app.Application
 import android.location.Geocoder
 import android.location.Location
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.content.PermissionChecker
 import com.google.android.gms.location.LocationServices
 import kotlinx.coroutines.suspendCancellableCoroutine
 import kotlin.coroutines.resume
 
-class RegionRepository(activity: AppCompatActivity) {
+class RegionRepository(application: Application) {
 
     companion object {
         private const val DEFAULT_REGION = "US"
     }
 
-    private val fusedLocationClient = LocationServices.getFusedLocationProviderClient(activity)
+    private val fusedLocationClient = LocationServices.getFusedLocationProviderClient(application)
     private val coarsePermissionChecker = PermissionChecker(
-        activity,
+        application,
         Manifest.permission.ACCESS_COARSE_LOCATION
     )
-    private val geocoder = Geocoder(activity)
+    private val geocoder = Geocoder(application)
 
     suspend fun findLastRegion(): String = findLastLocation().toRegion()
 
     private suspend fun findLastLocation(): Location? {
-        val success = coarsePermissionChecker.request()
+        val success = coarsePermissionChecker.check()
         return if (success) lastLocationSuspended() else null
     }
 

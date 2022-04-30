@@ -4,14 +4,17 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/app_navigation"
     app:startDestination="@id/listPlacesFragment">
-
     <fragment
         android:id="@+id/listPlacesFragment"
-        android:name="com.app.projectgroup3.ListPlacesFragment"
+        android:name="com.app.projectgroup3.ui.list_places.ListPlacesFragment"
         android:label="ListPlacesFragment"
         tools:layout="@layout/fragment_list_places">
         <action
             android:id="@+id/action_listPlacesFragment_to_detailFragment"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim"
             app:destination="@id/detailFragment" />
     </fragment>
     <fragment
