@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/feature_places_nav_graph"
+    app:startDestination="@id/listPlacesFragment">
+
+    <fragment
+        android:id="@+id/listPlacesFragment"
+        android:name="com.app.presentation.ListPlacesFragment"
+        android:label="fragment_list_places"
+        tools:layout="@layout/fragment_main_list_places" />
+</navigation>

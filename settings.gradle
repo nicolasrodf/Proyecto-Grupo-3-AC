@@ -14,3 +14,10 @@ dependencyResolutionManagement {
 }
 rootProject.name = "ProjectGroup3"
 include ':app'
+include ':lib'
+include ':feature_places'
+include ':feature_places:data'
+include ':feature_places:domain'
+include ':feature_places:presentation'
+include ':feature_places:usecases'
+include ':reature_login'

@@ -12,9 +12,15 @@
           <set>
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/app" />
+            <option value="$PROJECT_DIR$/feature_places" />
+            <option value="$PROJECT_DIR$/feature_places/data" />
+            <option value="$PROJECT_DIR$/feature_places/domain" />
+            <option value="$PROJECT_DIR$/feature_places/presentation" />
+            <option value="$PROJECT_DIR$/feature_places/usecases" />
+            <option value="$PROJECT_DIR$/lib" />
+            <option value="$PROJECT_DIR$/reature_login" />
           </set>
         </option>
-        <option name="resolveModulePerSourceSet" value="false" />
       </GradleProjectSettings>
     </option>
   </component>
