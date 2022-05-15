@@ -2,22 +2,25 @@ package com.app.projectgroup3.ui.list_places
 
 import android.os.Bundle
 import android.view.View
-import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import com.app.projectgroup3.PlacesAdapter
 import com.app.projectgroup3.R
+import com.app.projectgroup3.data.PlacesRepository
 import com.app.projectgroup3.databinding.FragmentListPlacesBinding
-import com.app.projectgroup3.model.PlacesRepository
+import com.app.projectgroup3.domain.GetPopularPlacesUseCase
+import com.app.projectgroup3.domain.RequestPopularPlacesUseCase
+import com.app.projectgroup3.ui.common.app
 import com.app.projectgroup3.ui.common.launchAndCollect
-import kotlinx.coroutines.flow.Flow
-import kotlinx.coroutines.flow.distinctUntilChanged
-import kotlinx.coroutines.flow.map
 
 class ListPlacesFragment : Fragment(R.layout.fragment_list_places) {
 
     private val viewModel: ListPlacesViewModel by viewModels {
-        ListPlacesViewModelFactory(PlacesRepository(requireActivity().application))
+        val repository = PlacesRepository(requireActivity().app)
+        ListPlacesViewModelFactory(
+            getPopularPlacesUseCase = GetPopularPlacesUseCase(repository),
+            requestPopularPlacesUseCase = RequestPopularPlacesUseCase(repository)
+        )
     }
     private var adapter = PlacesAdapter { lisPlacesState.onPlaceClick(it) }
     private lateinit var lisPlacesState: ListPlacesState
@@ -28,18 +31,12 @@ class ListPlacesFragment : Fragment(R.layout.fragment_list_places) {
 
         val binding = FragmentListPlacesBinding.bind(view).apply { recycler.adapter = adapter }
 
-        with(viewModel.state) {
-            diff({ it.places }, adapter::submitList)
-            diff({ it.loading }) { binding.progress.isVisible = it }
+        viewLifecycleOwner.launchAndCollect(viewModel.state) {
+            binding.loading = it.loading
+            binding.places = it.places
+            binding.error = it.error?.let(lisPlacesState::errorToString)
         }
 
         lisPlacesState.requestLocationPermission { viewModel.onUiReady() }
-    }
-
-    private fun <T, U> Flow<T>.diff(mapf: (T) -> U, body: (U) -> Unit) {
-        viewLifecycleOwner.launchAndCollect(
-            flow = this.map(mapf).distinctUntilChanged(),
-            body = body
-        )
     }
 }

@@ -1,4 +1,4 @@
-package com.app.projectgroup3.model
+package com.app.projectgroup3.data
 
 import android.os.Parcelable
 import com.google.gson.annotations.SerializedName
@@ -7,7 +7,7 @@ import kotlinx.parcelize.Parcelize
 @Parcelize
 data class Place(
     @SerializedName("id")
-    val id: String,
+    val id: Int,
     @SerializedName("name")
     val name: String,
     @SerializedName("shortDescription")

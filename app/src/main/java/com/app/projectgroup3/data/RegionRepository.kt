@@ -1,12 +1,10 @@
-package com.app.projectgroup3.model
+package com.app.projectgroup3.data
 
 import android.Manifest
 import android.annotation.SuppressLint
 import android.app.Application
 import android.location.Geocoder
 import android.location.Location
-import androidx.appcompat.app.AppCompatActivity
-import androidx.core.content.PermissionChecker
 import com.google.android.gms.location.LocationServices
 import kotlinx.coroutines.suspendCancellableCoroutine
 import kotlin.coroutines.resume

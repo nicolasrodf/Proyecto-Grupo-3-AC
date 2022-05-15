@@ -5,9 +5,11 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.app.projectgroup3.databinding.ViewPlaceBinding
-import com.app.projectgroup3.model.Place
+import com.app.projectgroup3.data.database.Place
 import com.app.projectgroup3.ui.common.basicDiffUtil
 import com.app.projectgroup3.ui.common.inflate
+import com.google.gson.Gson
+import com.google.gson.reflect.TypeToken
 
 class PlacesAdapter(private val listener: (Place) -> Unit) :
     ListAdapter<Place, PlacesAdapter.ViewHolder>(basicDiffUtil { old, new -> old.id == new.id }) {
@@ -28,8 +30,15 @@ class PlacesAdapter(private val listener: (Place) -> Unit) :
         fun bind(place: Place) = with(binding) {
             titleTextView.text = place.name
             descriptionTextView.text = place.shortDescription
+            val list: List<String> = Gson().fromJson(
+                place.images,
+                object : TypeToken<List<String>>() {}.type
+            )
+
             if (place.images.isNotEmpty()) {
-                imageView.loadUrl(place.images[0])
+                imageView.loadUrl(
+                    list[0]
+                )
             }
         }
     }

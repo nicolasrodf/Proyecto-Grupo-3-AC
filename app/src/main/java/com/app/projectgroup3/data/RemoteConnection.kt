@@ -1,4 +1,4 @@
-package com.app.projectgroup3.model
+package com.app.projectgroup3.data
 
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor

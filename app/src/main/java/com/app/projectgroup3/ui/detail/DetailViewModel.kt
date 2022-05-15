@@ -2,7 +2,7 @@ package com.app.projectgroup3.ui.detail
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
-import com.app.projectgroup3.model.Place
+import com.app.projectgroup3.data.database.Place
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow

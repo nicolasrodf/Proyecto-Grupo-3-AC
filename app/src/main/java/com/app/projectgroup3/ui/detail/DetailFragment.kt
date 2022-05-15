@@ -11,6 +11,8 @@ import androidx.navigation.fragment.navArgs
 import com.app.projectgroup3.R
 import com.app.projectgroup3.databinding.FragmentDetailBinding
 import com.app.projectgroup3.loadUrl
+import com.google.gson.Gson
+import com.google.gson.reflect.TypeToken
 import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.launch
 
@@ -35,11 +37,11 @@ class DetailFragment : Fragment(R.layout.fragment_detail) {
         val place = state.place
         movieDetailToolbar.title = place.name
         if (place.images.isNotEmpty()) {
-            movieDetailImage.loadUrl(place.images[0])
+            val list:List<String> = Gson().fromJson(
+                place.images,
+                object : TypeToken<List<String>>() {}.type
+            )
+            movieDetailImage.loadUrl(list[0])
         }
-        /* movieDetailToolbar.title = movie.title
-         movieDetailImage.loadUrl("https://image.tmdb.org/t/p/w780${movie.backdropPath}")
-         movieDetailSummary.text = movie.overview
-         movieDetailInfo.setMovie(movie)*/
     }
 }

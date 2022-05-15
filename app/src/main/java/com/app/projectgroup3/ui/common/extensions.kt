@@ -1,5 +1,6 @@
 package com.app.projectgroup3.ui.common
 
+import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -9,10 +10,10 @@ import androidx.lifecycle.LifecycleOwner
 import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.repeatOnLifecycle
 import androidx.recyclerview.widget.DiffUtil
+import com.app.projectgroup3.App
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.launch
-
 
 inline fun <T> basicDiffUtil(
     crossinline areItemsTheSame: (T, T) -> Boolean = { old, new -> old == new },
@@ -39,3 +40,6 @@ fun <T> LifecycleOwner.launchAndCollect(
         }
     }
 }
+
+val Context.app: App
+    get() = applicationContext as App

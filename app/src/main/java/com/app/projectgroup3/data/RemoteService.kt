@@ -1,4 +1,4 @@
-package com.app.projectgroup3.model
+package com.app.projectgroup3.data
 
 import retrofit2.http.GET
 import retrofit2.http.Query
