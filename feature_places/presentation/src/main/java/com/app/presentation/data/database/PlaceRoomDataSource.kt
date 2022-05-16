@@ -1,4 +1,4 @@
-package com.app.presentation.database
+package com.app.presentation.data.database
 
 import com.app.data.datasource.PlaceLocalDataSource
 import com.app.domain.Error
@@ -7,7 +7,7 @@ import com.app.presentation.data.tryCall
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.map
 import javax.inject.Inject
-import com.app.presentation.database.Place as DbPlace
+import com.app.presentation.data.database.Place as DbPlace
 
 class PlaceRoomDataSource @Inject constructor(private val placeDao: PlaceDao) :
     PlaceLocalDataSource {

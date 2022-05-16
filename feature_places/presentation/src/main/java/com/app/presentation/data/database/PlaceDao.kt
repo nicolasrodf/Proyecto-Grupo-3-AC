@@ -1,4 +1,4 @@
-package com.app.presentation.database
+package com.app.presentation.data.database
 
 import androidx.room.*
 import kotlinx.coroutines.flow.Flow

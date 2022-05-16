@@ -19,7 +19,7 @@ class PlacesRepository @Inject constructor(
         if (localDataSource.isEmpty()) {
             val places = remoteDataSource.findPopularPlaces()
             places.fold(
-                ifLeft = { localDataSource.save(it) }) { return it }
+                ifLeft = { return it }) { localDataSource.save(it) }
         }
         return null
     }

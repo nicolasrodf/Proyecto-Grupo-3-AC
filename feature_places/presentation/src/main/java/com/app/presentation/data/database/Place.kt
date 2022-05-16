@@ -1,4 +1,4 @@
-package com.app.presentation.database
+package com.app.presentation.data.database
 
 import androidx.room.Entity
 import androidx.room.PrimaryKey
