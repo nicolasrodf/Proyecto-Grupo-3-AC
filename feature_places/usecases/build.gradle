@@ -1,6 +1,14 @@
 plugins {
     id 'java-library'
     id 'org.jetbrains.kotlin.jvm'
+    id 'org.jetbrains.kotlin.kapt'
+}
+
+dependencies {
+    implementation project(":feature_places:domain")
+    implementation project(":feature_places:data")
+    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-core:1.6.0'
+    implementation "javax.inject:javax.inject:1"
 }
 
 java {
