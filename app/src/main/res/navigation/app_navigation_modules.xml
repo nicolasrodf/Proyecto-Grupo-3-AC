@@ -5,14 +5,5 @@
     android:id="@+id/app_navigation_modules"
     app:startDestination="@id/feature_places_nav_graph">
     <include app:graph="@navigation/feature_places_nav_graph" />
-    <fragment
-        android:id="@+id/blankFragment"
-        android:name="com.app.projectgroup3.BlankFragment"
-        android:label="fragment_blank"
-        tools:layout="@layout/fragment_blank" >
-        <action
-            android:id="@+id/action_blankFragment_to_feature_places_nav_graph"
-            app:destination="@id/feature_places_nav_graph" />
-    </fragment>
 
 </navigation>

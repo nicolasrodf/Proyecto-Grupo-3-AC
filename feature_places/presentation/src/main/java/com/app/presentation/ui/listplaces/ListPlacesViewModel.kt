@@ -1,4 +1,4 @@
-package com.app.presentation.listplaces
+package com.app.presentation.ui.listplaces
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope

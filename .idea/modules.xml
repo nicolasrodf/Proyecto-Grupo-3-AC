@@ -7,6 +7,10 @@
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/ProjectGroup3.app.androidTest.iml" filepath="$PROJECT_DIR$/.idea/modules/app/ProjectGroup3.app.androidTest.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/ProjectGroup3.app.main.iml" filepath="$PROJECT_DIR$/.idea/modules/app/ProjectGroup3.app.main.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/ProjectGroup3.app.unitTest.iml" filepath="$PROJECT_DIR$/.idea/modules/app/ProjectGroup3.app.unitTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/reature_login/ProjectGroup3.feature_login.iml" filepath="$PROJECT_DIR$/.idea/modules/reature_login/ProjectGroup3.feature_login.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/feature_login/ProjectGroup3.feature_login.androidTest.iml" filepath="$PROJECT_DIR$/.idea/modules/feature_login/ProjectGroup3.feature_login.androidTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/feature_login/ProjectGroup3.feature_login.main.iml" filepath="$PROJECT_DIR$/.idea/modules/feature_login/ProjectGroup3.feature_login.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/feature_login/ProjectGroup3.feature_login.unitTest.iml" filepath="$PROJECT_DIR$/.idea/modules/feature_login/ProjectGroup3.feature_login.unitTest.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/feature_places/ProjectGroup3.feature_places.iml" filepath="$PROJECT_DIR$/.idea/modules/feature_places/ProjectGroup3.feature_places.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/feature_places/data/ProjectGroup3.feature_places.data.iml" filepath="$PROJECT_DIR$/.idea/modules/feature_places/data/ProjectGroup3.feature_places.data.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/feature_places/data/ProjectGroup3.feature_places.data.main.iml" filepath="$PROJECT_DIR$/.idea/modules/feature_places/data/ProjectGroup3.feature_places.data.main.iml" />
@@ -22,12 +26,10 @@
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/feature_places/usecases/ProjectGroup3.feature_places.usecases.main.iml" filepath="$PROJECT_DIR$/.idea/modules/feature_places/usecases/ProjectGroup3.feature_places.usecases.main.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/feature_places/usecases/ProjectGroup3.feature_places.usecases.test.iml" filepath="$PROJECT_DIR$/.idea/modules/feature_places/usecases/ProjectGroup3.feature_places.usecases.test.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/lib/ProjectGroup3.lib.iml" filepath="$PROJECT_DIR$/.idea/modules/lib/ProjectGroup3.lib.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/lib/ProjectGroup3.lib.main.iml" filepath="$PROJECT_DIR$/.idea/modules/lib/ProjectGroup3.lib.main.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/lib/ProjectGroup3.lib.test.iml" filepath="$PROJECT_DIR$/.idea/modules/lib/ProjectGroup3.lib.test.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/reature_login/ProjectGroup3.reature_login.iml" filepath="$PROJECT_DIR$/.idea/modules/reature_login/ProjectGroup3.reature_login.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/reature_login/ProjectGroup3.reature_login.androidTest.iml" filepath="$PROJECT_DIR$/.idea/modules/reature_login/ProjectGroup3.reature_login.androidTest.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/reature_login/ProjectGroup3.reature_login.main.iml" filepath="$PROJECT_DIR$/.idea/modules/reature_login/ProjectGroup3.reature_login.main.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/reature_login/ProjectGroup3.reature_login.unitTest.iml" filepath="$PROJECT_DIR$/.idea/modules/reature_login/ProjectGroup3.reature_login.unitTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/uicomponent/ProjectGroup3.uicomponent.iml" filepath="$PROJECT_DIR$/.idea/modules/uicomponent/ProjectGroup3.uicomponent.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/uicomponent/ProjectGroup3.uicomponent.androidTest.iml" filepath="$PROJECT_DIR$/.idea/modules/uicomponent/ProjectGroup3.uicomponent.androidTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/uicomponent/ProjectGroup3.uicomponent.main.iml" filepath="$PROJECT_DIR$/.idea/modules/uicomponent/ProjectGroup3.uicomponent.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/uicomponent/ProjectGroup3.uicomponent.unitTest.iml" filepath="$PROJECT_DIR$/.idea/modules/uicomponent/ProjectGroup3.uicomponent.unitTest.iml" />
     </modules>
   </component>
 </project>

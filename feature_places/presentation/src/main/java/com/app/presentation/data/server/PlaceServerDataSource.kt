@@ -17,7 +17,6 @@ class PlaceServerDataSource @Inject constructor(@ApiKey private val apiKey: Stri
     }
 }
 
-
 private fun List<RemotePlace>.toDomainModel(): List<Place> = map { it.toDomainModel() }
 
 private fun RemotePlace.toDomainModel() = Place(

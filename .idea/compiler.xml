@@ -3,6 +3,7 @@
   <component name="CompilerConfiguration">
     <bytecodeTargetLevel target="1.7">
       <module name="ProjectGroup3.app" target="11" />
+      <module name="ProjectGroup3.feature_login" target="11" />
       <module name="ProjectGroup3.feature_places.data" target="1.8" />
       <module name="ProjectGroup3.feature_places.data.main" target="1.8" />
       <module name="ProjectGroup3.feature_places.data.test" target="1.8" />
@@ -10,7 +11,10 @@
       <module name="ProjectGroup3.feature_places.domain.main" target="1.8" />
       <module name="ProjectGroup3.feature_places.domain.test" target="1.8" />
       <module name="ProjectGroup3.feature_places.presentation" target="11" />
-      <module name="ProjectGroup3.reature_login" target="11" />
+      <module name="ProjectGroup3.lib.firebase" target="1.8" />
+      <module name="ProjectGroup3.lib.firebase.main" target="1.8" />
+      <module name="ProjectGroup3.lib.firebase.test" target="1.8" />
+      <module name="ProjectGroup3.uicomponent" target="11" />
     </bytecodeTargetLevel>
   </component>
 </project>
