@@ -9,5 +9,14 @@
         android:id="@+id/listPlacesFragment"
         android:name="com.app.presentation.ui.listplaces.ListPlacesFragment"
         android:label="fragment_list_places"
-        tools:layout="@layout/fragment_main_list_places" />
+        tools:layout="@layout/fragment_list_places" >
+        <action
+            android:id="@+id/action_listPlacesFragment_to_detailPlaceFragment"
+            app:destination="@id/detailPlaceFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/detailPlaceFragment"
+        android:name="com.app.presentation.ui.detail.DetailPlaceFragment"
+        android:label="fragment_detail_place"
+        tools:layout="@layout/fragment_detail_place" />
 </navigation>

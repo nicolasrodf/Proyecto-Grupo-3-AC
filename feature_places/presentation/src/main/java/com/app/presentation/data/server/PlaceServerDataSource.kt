@@ -25,7 +25,6 @@ private fun RemotePlace.toDomainModel() = Place(
     shortDescription,
     largeDescription,
     ArrayList(),
-    image,
     location,
     latitude,
     longitude,

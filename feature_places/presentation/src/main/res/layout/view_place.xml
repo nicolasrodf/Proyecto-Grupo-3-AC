@@ -1,8 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
 
     <data>
+
+        <import type="com.app.domain.Place" />
+
+        <variable
+            name="place"
+            type="com.app.domain.Place" />
 
     </data>
 
@@ -15,7 +22,7 @@
             android:layout_width="80dp"
             android:layout_height="60dp"
             android:layout_margin="16dp"
-            android:src="@drawable/ic_launcher_background"
+            android:src="@drawable/no_image"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -23,30 +30,32 @@
             android:id="@+id/titleTextView"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
             android:layout_marginEnd="16dp"
             android:ellipsize="end"
             android:maxLines="1"
             android:singleLine="true"
-            android:text="Machu picchu"
+            android:text="@{place.name}"
             android:textAppearance="@style/TextAppearance.AppCompat.Medium"
             android:textColor="@color/grey_90"
-            android:layout_marginStart="8dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/imageView"
-            app:layout_constraintTop_toTopOf="@+id/imageView" />
+            app:layout_constraintTop_toTopOf="@+id/imageView"
+            tools:text="Machu picchu" />
 
         <TextView
             android:id="@+id/descriptionTextView"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
             android:layout_marginEnd="16dp"
             android:ellipsize="end"
             android:maxLines="2"
-            android:layout_marginStart="8dp"
-            android:text="@string/middle_lorem_ipsum"
+            android:text="@{place.shortDescription}"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/imageView"
-            app:layout_constraintTop_toBottomOf="@+id/titleTextView" />
+            app:layout_constraintTop_toBottomOf="@+id/titleTextView"
+            tools:text="@string/middle_lorem_ipsum" />
 
         <View
             android:layout_width="0dp"

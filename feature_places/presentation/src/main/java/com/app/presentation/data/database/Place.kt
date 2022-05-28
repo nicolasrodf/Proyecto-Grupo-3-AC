@@ -9,7 +9,6 @@ data class Place(
     val name: String,
     val shortDescription: String,
     val largeDescription: String,
-    val image:String,
     val location: String,
     val latitude: String,
     val longitude: String,

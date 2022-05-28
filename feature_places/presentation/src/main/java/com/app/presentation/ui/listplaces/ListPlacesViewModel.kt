@@ -4,13 +4,11 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.app.domain.Error
 import com.app.domain.Place
+import com.app.presentation.data.toError
 import com.app.usecases.GetPopularPlacesUseCase
 import com.app.usecases.RequestPopularPlacesUseCase
 import dagger.hilt.android.lifecycle.HiltViewModel
-import kotlinx.coroutines.flow.MutableStateFlow
-import kotlinx.coroutines.flow.StateFlow
-import kotlinx.coroutines.flow.asStateFlow
-import kotlinx.coroutines.flow.update
+import kotlinx.coroutines.flow.*
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 
@@ -23,19 +21,11 @@ class ListPlacesViewModel @Inject constructor(
     val state: StateFlow<UiState> = _state.asStateFlow()
 
     init {
-
-        onUiReady()
-        /*viewModelScope.launch {
-            Log.d("LOG XD", "1")
+        viewModelScope.launch {
             getPopularPlacesUseCase()
                 .catch { cause -> _state.update { it.copy(error = cause.toError()) } }
-                .collect { places ->
-                    _state.update {
-                        Log.d("LOG XD", "" + Gson().toJson(it.places))
-                        UiState(places = places)
-                    }
-                }
-        }*/
+                .collect { places -> _state.update { UiState(places = places) } }
+        }
     }
 
     fun onUiReady() {

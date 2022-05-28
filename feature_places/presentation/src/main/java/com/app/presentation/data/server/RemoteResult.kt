@@ -1,6 +1,5 @@
 package com.app.presentation.data.server
 
-import android.os.Parcelable
 import com.google.gson.annotations.SerializedName
 
 data class RemoteResult(
@@ -15,7 +14,6 @@ data class RemotePlace(
     val name: String,
     val shortDescription: String,
     val largeDescription: String,
-    val image: String,
     val location: String,
     val latitude: String,
     val longitude: String
