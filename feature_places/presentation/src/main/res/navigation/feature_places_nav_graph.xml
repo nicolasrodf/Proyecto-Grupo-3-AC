@@ -18,5 +18,9 @@
         android:id="@+id/detailPlaceFragment"
         android:name="com.app.presentation.ui.detail.DetailPlaceFragment"
         android:label="fragment_detail_place"
-        tools:layout="@layout/fragment_detail_place" />
+        tools:layout="@layout/fragment_detail_place" >
+        <argument
+            android:name="idPlace"
+            app:argType="integer" />
+    </fragment>
 </navigation>

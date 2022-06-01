@@ -5,9 +5,9 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.app.domain.Place
+import com.app.presentation.R
 import com.app.presentation.databinding.ViewPlaceBinding
 import com.app.presentation.ui.common.basicDiffUtil
-import com.app.presentation.R
 import com.app.presentation.ui.common.inflate
 
 class PlacesAdapter(private val listener: (Place) -> Unit) :
@@ -28,6 +28,9 @@ class PlacesAdapter(private val listener: (Place) -> Unit) :
         private val binding = ViewPlaceBinding.bind(view)
         fun bind(place: Place) {
             binding.place = place
+            if (place.images.isNotEmpty()) {
+                binding.randomImage = place.images.first().url
+            }
         }
     }
 }

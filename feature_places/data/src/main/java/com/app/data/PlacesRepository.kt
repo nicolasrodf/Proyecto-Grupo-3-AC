@@ -13,13 +13,12 @@ class PlacesRepository @Inject constructor(
 ) {
     fun getPopularPlaces() = localDataSource.places
 
-    fun findById(id: Int): Flow<Place> = localDataSource.findById(id)
+    fun findById(id: Int): Flow<Place> = localDataSource.findByIdWithImages(id)
 
     suspend fun requestPopularMovies(): Error? {
         if (localDataSource.isEmpty()) {
             val places = remoteDataSource.findPopularPlaces()
-            places.fold(
-                ifLeft = { return it }) { localDataSource.save(it) }
+            places.fold(ifLeft = { return it }) { localDataSource.save(it) }
         }
         return null
     }

@@ -7,7 +7,7 @@ import com.app.data.datasource.PlaceRemoteDataSource
 import com.app.presentation.R
 import com.app.presentation.data.database.PlaceRoomDataSource
 import com.app.presentation.data.server.PlaceServerDataSource
-import com.app.presentation.database.PlaceDataBase
+import com.app.presentation.data.database.PlaceDataBase
 import dagger.Binds
 import dagger.Module
 import dagger.Provides
@@ -35,6 +35,9 @@ object AppModule {
     @Singleton
     fun providePlaceDao(db: PlaceDataBase) = db.placeDao()
 
+    @Provides
+    @Singleton
+    fun provideImagePlaceDao(db: PlaceDataBase) = db.imagePlaceDao()
 }
 
 @Module

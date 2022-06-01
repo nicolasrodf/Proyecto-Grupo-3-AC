@@ -5,9 +5,13 @@ data class Place(
     val name: String,
     val shortDescription: String,
     val largeDescription: String,
-    val images: List<String>,
+    var images: List<ImagePlace>,
     val location: String,
     val latitude: String,
     val longitude: String,
     val favorite: Boolean
 )
+
+fun List<ImagePlace>.randomImage(): ImagePlace{
+    return this.random()
+}

@@ -5,6 +5,6 @@ import com.app.domain.Place
 import kotlinx.coroutines.flow.Flow
 import javax.inject.Inject
 
-class FindPlaceUseCase  constructor(private val repository: PlacesRepository) {
+class FindPlaceUseCase @Inject constructor(private val repository: PlacesRepository) {
     operator fun invoke(id: Int): Flow<Place> = repository.findById(id)
 }

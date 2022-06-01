@@ -9,4 +9,5 @@ interface PlaceLocalDataSource {
     suspend fun isEmpty(): Boolean
     fun findById(id: Int): Flow<Place>
     suspend fun save(places: List<Place>): Error?
+    fun findByIdWithImages(id: Int): Flow<Place>
 }

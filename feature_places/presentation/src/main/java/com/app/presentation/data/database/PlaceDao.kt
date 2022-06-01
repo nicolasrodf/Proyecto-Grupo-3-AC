@@ -19,4 +19,13 @@ interface PlaceDao {
 
     @Update
     suspend fun updatePlace(place: Place)
+
+    @Transaction
+    @Query("SELECT * FROM Place where id=:idPlace")
+    fun getPlaceWithImagePlaces(idPlace: Int): Flow<PlaceWithImagePlaces>
+
+    @Transaction
+    @Query("SELECT * FROM Place")
+    fun getAllPlacesWithImagePlaces(): Flow<List<PlaceWithImagePlaces>>
+
 }

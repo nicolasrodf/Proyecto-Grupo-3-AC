@@ -1,6 +1,8 @@
 package com.app.presentation.ui.listplaces
 
 import android.content.Context
+import android.view.View
+import androidx.appcompat.widget.Toolbar
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.NavController
@@ -22,7 +24,7 @@ class ListPlacesState(
     private val navController: NavController
 ) {
     fun onPlaceClicked(place: Place) {
-        val action = ListPlacesFragmentDirections.actionListPlacesFragmentToDetailPlaceFragment()
+        val action = ListPlacesFragmentDirections.actionListPlacesFragmentToDetailPlaceFragment(place.id)
         navController.navigate(action)
     }
 

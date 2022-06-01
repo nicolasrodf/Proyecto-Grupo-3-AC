@@ -6,10 +6,12 @@
     <data>
 
         <import type="com.app.domain.Place" />
-
         <variable
             name="place"
             type="com.app.domain.Place" />
+        <variable
+            name="randomImage"
+            type="String" />
 
     </data>
 
@@ -22,7 +24,8 @@
             android:layout_width="80dp"
             android:layout_height="60dp"
             android:layout_margin="16dp"
-            android:src="@drawable/no_image"
+            android:src="@drawable/background_no_image"
+            app:url="@{randomImage}"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 

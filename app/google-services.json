@@ -95,6 +95,35 @@
     },
     {
       "client_info": {
+        "mobilesdk_app_id": "1:889835422984:android:0a36cbc87eea71338d18bd",
+        "android_client_info": {
+          "package_name": "com.architectcoders.project"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "889835422984-qbkinkat4tmsp9367ra29o21atojn141.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCsgL_G-XOi7J7El0bCl627bZpJaRyaP0Q"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "889835422984-qbkinkat4tmsp9367ra29o21atojn141.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
         "mobilesdk_app_id": "1:889835422984:android:a533b026b92d7fb28d18bd",
         "android_client_info": {
           "package_name": "com.devexperto.architectcoders"

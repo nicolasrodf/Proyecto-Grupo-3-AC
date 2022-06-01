@@ -3,6 +3,7 @@ package com.app.presentation.data.server
 import arrow.core.Either
 import com.app.data.datasource.PlaceRemoteDataSource
 import com.app.domain.Error
+import com.app.domain.ImagePlace
 import com.app.domain.Place
 import com.app.presentation.data.tryCall
 import com.app.presentation.di.ApiKey
@@ -24,9 +25,19 @@ private fun RemotePlace.toDomainModel() = Place(
     name,
     shortDescription,
     largeDescription,
-    ArrayList(),
+    images.toDomainModel(),
     location,
     latitude,
     longitude,
     favorite = false
+)
+
+@JvmName("toDomainModelRemoteImagePlace")
+private fun List<RemoteImagePlace>.toDomainModel(): List<ImagePlace> = map { it.toDomainModel() }
+
+private fun RemoteImagePlace.toDomainModel() = ImagePlace(
+    id,
+    idPlace,
+    url,
+    position
 )

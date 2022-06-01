@@ -14,7 +14,7 @@ class ListPlacesFragment : Fragment(R.layout.fragment_list_places) {
     private val viewModel: ListPlacesViewModel by viewModels()
     private lateinit var binding: FragmentListPlacesBinding
     private lateinit var listPlacesState: ListPlacesState
-    private val adapter = PlacesAdapter {}
+    private val adapter = PlacesAdapter { listPlacesState.onPlaceClicked(it) }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)

@@ -14,7 +14,15 @@ data class RemotePlace(
     val name: String,
     val shortDescription: String,
     val largeDescription: String,
+    val images:List<RemoteImagePlace>,
     val location: String,
     val latitude: String,
     val longitude: String
+)
+
+data class RemoteImagePlace(
+    val id: Int,
+    val idPlace: Int,
+    val url: String,
+    val position: Int
 )
