@@ -2,12 +2,14 @@ package com.app.presentation.di
 
 import android.app.Application
 import androidx.room.Room
+import com.app.data.datasource.CommentFirebaseRemoteDataSource
 import com.app.data.datasource.PlaceLocalDataSource
 import com.app.data.datasource.PlaceRemoteDataSource
 import com.app.presentation.R
 import com.app.presentation.data.database.PlaceRoomDataSource
 import com.app.presentation.data.server.PlaceServerDataSource
 import com.app.presentation.data.database.PlaceDataBase
+import com.app.presentation.data.firebase.CommentFirebaseServerDataSource
 import dagger.Binds
 import dagger.Module
 import dagger.Provides
@@ -48,5 +50,8 @@ abstract class AppDataModule {
 
     @Binds
     abstract fun bindRemoteDataSource(remoteDataSource: PlaceServerDataSource): PlaceRemoteDataSource
+
+    @Binds
+    abstract fun bindRemoteFirebaseComments(commentFirebaseServerDataSource: CommentFirebaseServerDataSource): CommentFirebaseRemoteDataSource
 
 }

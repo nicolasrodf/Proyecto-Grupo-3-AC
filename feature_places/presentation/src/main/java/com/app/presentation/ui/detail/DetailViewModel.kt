@@ -1,5 +1,6 @@
 package com.app.presentation.ui.detail
 
+import android.util.Log
 import androidx.lifecycle.SavedStateHandle
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
@@ -7,6 +8,8 @@ import com.app.domain.Error
 import com.app.domain.Place
 import com.app.presentation.data.toError
 import com.app.usecases.FindPlaceUseCase
+import com.app.usecases.GetCommentsOfPlaceUseCase
+import com.google.gson.Gson
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.*
 import kotlinx.coroutines.launch
@@ -15,7 +18,8 @@ import javax.inject.Inject
 @HiltViewModel
 class DetailViewModel @Inject constructor(
     savedStateHandle: SavedStateHandle,
-    findPlaceUseCase: FindPlaceUseCase
+    findPlaceUseCase: FindPlaceUseCase,
+    getCommentsOfPlaceUseCase: GetCommentsOfPlaceUseCase
 ) : ViewModel() {
 
     private val placeId = DetailPlaceFragmentArgs.fromSavedStateHandle(savedStateHandle).idPlace
@@ -35,6 +39,18 @@ class DetailViewModel @Inject constructor(
                         )
                     }
                 }
+        }
+        viewModelScope.launch {
+            val comments = getCommentsOfPlaceUseCase.invoke(1)
+            comments.fold(ifLeft = {
+                Log.d("ERROR", Gson().toJson(it))
+            }) { flowComments ->
+                flowComments
+                    .catch { cause -> Log.d("ERROR FIREBASE", Gson().toJson(cause.toError())) }
+                    .collect { listComments ->
+                        Log.d("COMENTARIOS OK", Gson().toJson(listComments))
+                    }
+            }
         }
     }
 

@@ -16,7 +16,7 @@
         <entry key="app/src/main/res/layout/view_place.xml" value="0.1693840579710145" />
         <entry key="feature_places/presentation/src/main/res/drawable/eleme.xml" value="0.1305" />
         <entry key="feature_places/presentation/src/main/res/drawable/image.xml" value="0.135" />
-        <entry key="feature_places/presentation/src/main/res/layout/fragment_detail_place.xml" value="0.125" />
+        <entry key="feature_places/presentation/src/main/res/layout/fragment_detail_place.xml" value="0.335" />
         <entry key="feature_places/presentation/src/main/res/layout/fragment_list_places.xml" value="0.23177083333333334" />
         <entry key="feature_places/presentation/src/main/res/layout/fragment_main_list_palces.xml" value="0.1" />
         <entry key="feature_places/presentation/src/main/res/layout/fragment_main_list_places.xml" value="0.12552083333333333" />
