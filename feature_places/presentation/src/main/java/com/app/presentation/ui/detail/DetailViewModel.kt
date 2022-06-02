@@ -11,6 +11,7 @@ import com.app.presentation.ui.common.getDateTime
 import com.app.usecases.FindPlaceUseCase
 import com.app.usecases.GetCommentsOfPlaceUseCase
 import com.app.usecases.SaveCommentOfPlaceUseCase
+import com.app.usecases.SwitchPlaceFavoriteUseCase
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.*
 import kotlinx.coroutines.launch
@@ -21,7 +22,8 @@ class DetailViewModel @Inject constructor(
     savedStateHandle: SavedStateHandle,
     findPlaceUseCase: FindPlaceUseCase,
     getCommentsOfPlaceUseCase: GetCommentsOfPlaceUseCase,
-    private val saveCommentOfPlaceUseCase: SaveCommentOfPlaceUseCase
+    private val saveCommentOfPlaceUseCase: SaveCommentOfPlaceUseCase,
+    private val switchPlaceFavoriteUseCase: SwitchPlaceFavoriteUseCase
 ) : ViewModel() {
 
     private val placeId = DetailPlaceFragmentArgs.fromSavedStateHandle(savedStateHandle).idPlace
@@ -56,6 +58,15 @@ class DetailViewModel @Inject constructor(
                             )
                         }
                     }
+            }
+        }
+    }
+
+    fun onFavoriteClicked() {
+        viewModelScope.launch {
+            _state.value.place?.let { place ->
+                val error = switchPlaceFavoriteUseCase(place)
+                _state.update { it.copy(error = error) }
             }
         }
     }

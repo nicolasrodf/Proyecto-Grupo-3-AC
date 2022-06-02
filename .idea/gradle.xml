@@ -13,6 +13,10 @@
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/app" />
             <option value="$PROJECT_DIR$/feature_login" />
+            <option value="$PROJECT_DIR$/feature_login/data" />
+            <option value="$PROJECT_DIR$/feature_login/domain" />
+            <option value="$PROJECT_DIR$/feature_login/presentation" />
+            <option value="$PROJECT_DIR$/feature_login/usecase" />
             <option value="$PROJECT_DIR$/feature_places" />
             <option value="$PROJECT_DIR$/feature_places/data" />
             <option value="$PROJECT_DIR$/feature_places/domain" />

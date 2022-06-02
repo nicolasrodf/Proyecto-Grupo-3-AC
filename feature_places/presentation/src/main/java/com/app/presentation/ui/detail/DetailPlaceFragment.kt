@@ -21,10 +21,13 @@ class DetailPlaceFragment : Fragment(R.layout.fragment_detail_place) {
         super.onViewCreated(view, savedInstanceState)
         binding = FragmentDetailPlaceBinding.bind(view)
         initToolbar()
+
         binding.recycler.adapter = adapter
-        binding.addCommentButton.setOnClickListener {
-            showCustomDialog(::listenerComment)
-        }
+
+        binding.fab.setOnClickListener { viewModel.onFavoriteClicked() }
+
+        binding.addCommentButton.setOnClickListener { showCustomDialog(::listenerComment) }
+
         viewLifecycleOwner.launchAndCollect(viewModel.state) { state ->
             if (state.place != null) {
                 binding.place = state.place

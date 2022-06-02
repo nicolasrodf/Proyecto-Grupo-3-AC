@@ -4,6 +4,6 @@ import com.app.data.PlacesRepository
 import com.app.domain.Place
 import javax.inject.Inject
 
-class SwitchPlaceFavoriteUseCase  constructor(private val placesRepository: PlacesRepository) {
+class SwitchPlaceFavoriteUseCase  @Inject constructor(private val placesRepository: PlacesRepository) {
     suspend operator fun invoke(place: Place) = placesRepository.switchFavorite(place)
 }

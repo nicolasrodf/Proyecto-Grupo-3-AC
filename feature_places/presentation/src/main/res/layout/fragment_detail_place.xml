@@ -172,7 +172,7 @@
             app:fabSize="normal"
             app:layout_anchor="@id/app_bar_layout"
             app:layout_anchorGravity="bottom|right|end"
-            app:srcCompat="@drawable/ic_cards_heart_outline"
+            android:src="@{place.favorite ? @drawable/ic_cards_heart : @drawable/ic_cards_heart_outline}"
             app:tint="@android:color/white" />
     </androidx.coordinatorlayout.widget.CoordinatorLayout>
 </layout>
