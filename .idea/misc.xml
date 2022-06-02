@@ -16,16 +16,20 @@
         <entry key="app/src/main/res/layout/view_place.xml" value="0.1693840579710145" />
         <entry key="feature_places/presentation/src/main/res/drawable/eleme.xml" value="0.1305" />
         <entry key="feature_places/presentation/src/main/res/drawable/image.xml" value="0.135" />
+        <entry key="feature_places/presentation/src/main/res/layout/dialog_add_review.xml" value="0.335" />
         <entry key="feature_places/presentation/src/main/res/layout/fragment_detail_place.xml" value="0.335" />
         <entry key="feature_places/presentation/src/main/res/layout/fragment_list_places.xml" value="0.23177083333333334" />
         <entry key="feature_places/presentation/src/main/res/layout/fragment_main_list_palces.xml" value="0.1" />
         <entry key="feature_places/presentation/src/main/res/layout/fragment_main_list_places.xml" value="0.12552083333333333" />
+        <entry key="feature_places/presentation/src/main/res/layout/view_bcp_share_button.xml" value="0.18645833333333334" />
+        <entry key="feature_places/presentation/src/main/res/layout/view_bcp_voucher.xml" value="0.18541666666666667" />
         <entry key="feature_places/presentation/src/main/res/layout/view_comment.xml" value="0.25" />
         <entry key="feature_places/presentation/src/main/res/layout/view_place.xml" value="0.12552083333333333" />
         <entry key="uicomponent/src/main/res/drawable/ejemplo.xml" value="0.2325" />
         <entry key="uicomponent/src/main/res/drawable/ic_arrow_back.xml" value="0.2325" />
         <entry key="uicomponent/src/main/res/drawable/ic_cards_heart.xml" value="0.1305" />
         <entry key="uicomponent/src/main/res/drawable/ic_cards_heart_outline.xml" value="0.1305" />
+        <entry key="uicomponent/src/main/res/drawable/ic_create.xml" value="0.209" />
         <entry key="uicomponent/src/main/res/drawable/map_marker_circle.xml" value="0.2325" />
         <entry key="uicomponent/src/main/res/drawable/shape_circle.xml" value="0.1305" />
       </map>

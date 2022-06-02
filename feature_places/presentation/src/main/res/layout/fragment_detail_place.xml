@@ -7,6 +7,10 @@
 
         <import type="com.app.domain.Place" />
 
+        <import type="com.app.domain.Comment" />
+
+        <import type="java.util.List" />
+
         <variable
             name="place"
             type="com.app.domain.Place" />
@@ -14,6 +18,10 @@
         <variable
             name="urlImage"
             type="String" />
+
+        <variable
+            name="comments"
+            type="List&lt;Comment>" />
 
     </data>
 
@@ -61,6 +69,7 @@
         </com.google.android.material.appbar.AppBarLayout>
 
         <androidx.core.widget.NestedScrollView
+            android:id="@+id/nestedScrollView"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:background="@android:color/white"
@@ -120,9 +129,19 @@
                     android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
                     android:textColor="@color/grey_80"
                     tools:text="@string/long_lorem_ipsum" />
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/addCommentButton"
+                    style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                    android:layout_marginTop="@dimen/spacing_middle"
+                    android:layout_width="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    app:icon="@drawable/ic_create"
+                    android:text="@string/text_add_comment" />
 
                 <TextView
-                    android:id="@+id/comments"
+                    android:id="@+id/commentTitleTextView"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/spacing_middle"
@@ -136,6 +155,7 @@
                     android:id="@+id/recycler"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    app:itemsComments="@{comments}"
                     app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
                     app:layout_behavior="@string/appbar_scrolling_view_behavior"
                     app:spanCount="3" />
@@ -148,13 +168,11 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="@dimen/spacing_mlarge"
-            android:clickable="true"
             android:backgroundTint="@color/design_default_color_primary"
-            app:tint="@android:color/white"
             app:fabSize="normal"
             app:layout_anchor="@id/app_bar_layout"
             app:layout_anchorGravity="bottom|right|end"
-            app:srcCompat="@drawable/ic_cards_heart_outline" />
-
+            app:srcCompat="@drawable/ic_cards_heart_outline"
+            app:tint="@android:color/white" />
     </androidx.coordinatorlayout.widget.CoordinatorLayout>
 </layout>

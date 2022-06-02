@@ -4,7 +4,6 @@ import arrow.core.Either
 import com.app.data.datasource.CommentFirebaseRemoteDataSource
 import com.app.domain.Comment
 import com.app.domain.Error
-import com.app.domain.Place
 import com.app.presentation.data.tryCall
 import com.app.presentation.di.ApiKey
 import com.google.firebase.database.DataSnapshot
@@ -17,41 +16,63 @@ import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.callbackFlow
 import javax.inject.Inject
 
-class CommentFirebaseServerDataSource @Inject constructor(@ApiKey private val apiKey: String) : CommentFirebaseRemoteDataSource {
-    override suspend fun getCommentOfPlace(idPlace:Int): Either<Error, Flow<List<Comment>>> = tryCall {
-        callbackFlowComments(idPlace)
-    }
+class CommentFirebaseServerDataSource @Inject constructor(@ApiKey private val apiKey: String) :
+    CommentFirebaseRemoteDataSource {
+    override suspend fun getCommentsOfPlace(idPlace: Int): Either<Error, Flow<List<Comment>>> =
+        tryCall {
+            callbackFlow {
+                val databaseFirebase =
+                    Firebase.database.reference.child("comments").child(idPlace.toString())
+                val listener = object : ValueEventListener {
+                    override fun onDataChange(snapshot: DataSnapshot) {
+                        val listComments = ArrayList<RemoteComment>()
+                        snapshot.children.map { postSnapshot ->
+                            postSnapshot.getValue(RemoteComment::class.java)
+                                ?.let { listComments.add(it) }
+                        }
+                        listComments.sortByDescending { it.timeRegister }
+                        trySend(listComments.toDomain())
+                    }
 
-    private fun callbackFlowComments(idPlace:Int):Flow<List<Comment>> = callbackFlow {
-        val databaseFirebase = Firebase.database.reference.child("comments")
-        val listener = object : ValueEventListener {
-            override fun onDataChange(snapshot: DataSnapshot) {
-                val listComments = ArrayList<RemoteComment>()
-                for (postSnapshot in snapshot.children) {
-                    val commentModel = postSnapshot.getValue(RemoteComment::class.java)
-                    listComments.add(commentModel!!)
+                    override fun onCancelled(error: DatabaseError) {
+                        trySend(ArrayList())
+                    }
                 }
-                trySend(listComments.toDomain())
+                databaseFirebase.addValueEventListener(listener)
+                awaitClose { databaseFirebase.removeEventListener(listener) }
             }
+        }
 
-            override fun onCancelled(error: DatabaseError) {
-                trySend(ArrayList())
+    override fun saveCommentOfPlace(comment: Comment): Flow<Error?> =
+        callbackFlow {
+            val databaseFirebase = Firebase.database
+            val commentReference =
+                databaseFirebase.getReference("comments").child(comment.idPlace.toString())
+            commentReference.push().setValue(comment).addOnSuccessListener {
+                trySend(null)
+            }.addOnCanceledListener {
+                trySend(Error.Unknown("error"))
             }
         }
-        databaseFirebase.addValueEventListener(listener)
-        awaitClose {
-            databaseFirebase.removeEventListener(listener)
-        }
-    }
+
+
+    private fun RemoteComment.toDomain() = Comment(
+        id,
+        idPlace,
+        idUser,
+        timeRegister,
+        nameUser,
+        commentText
+    )
+
+    fun List<RemoteComment>.toDomain() = map { it.toDomain() }
+
+    private fun Comment.fromDomainModel() = RemoteComment(
+        id,
+        idPlace,
+        idUser,
+        timeRegister,
+        nameUser,
+        commentText
+    )
 }
-
-fun RemoteComment.toDomain() = Comment(
-    id,
-    idPlace,
-    idUser,
-    timeRegister,
-    nameUser,
-    commentText
-)
-
-fun List<RemoteComment>.toDomain() = map { it.toDomain() }

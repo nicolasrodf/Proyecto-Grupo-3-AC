@@ -8,21 +8,28 @@ import androidx.navigation.fragment.findNavController
 import com.app.presentation.R
 import com.app.presentation.common.launchAndCollect
 import com.app.presentation.databinding.FragmentDetailPlaceBinding
+import com.app.presentation.ui.common.showCustomDialog
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
 class DetailPlaceFragment : Fragment(R.layout.fragment_detail_place) {
     private lateinit var binding: FragmentDetailPlaceBinding
     private val viewModel: DetailViewModel by viewModels()
+    private val adapter = CommentsAdapter {}
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         binding = FragmentDetailPlaceBinding.bind(view)
         initToolbar()
+        binding.recycler.adapter = adapter
+        binding.addCommentButton.setOnClickListener {
+            showCustomDialog(::listenerComment)
+        }
         viewLifecycleOwner.launchAndCollect(viewModel.state) { state ->
-            if (state.place !=null){
+            if (state.place != null) {
                 binding.place = state.place
-                binding.urlImage=state.urlImage
+                binding.urlImage = state.urlImage
+                binding.comments = state.comments
             }
         }
     }
@@ -30,5 +37,9 @@ class DetailPlaceFragment : Fragment(R.layout.fragment_detail_place) {
     private fun initToolbar() {
         val toolbar = binding.toolbar
         toolbar.setNavigationOnClickListener { findNavController().popBackStack() }
+    }
+
+    private fun listenerComment(textComment: String) {
+        viewModel.saveCommentClicked(textComment)
     }
 }

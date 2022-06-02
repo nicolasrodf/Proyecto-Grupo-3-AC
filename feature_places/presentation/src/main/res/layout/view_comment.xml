@@ -1,16 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
 
     <data>
+
+        <import type="com.app.domain.Comment" />
+
+        <variable
+            name="comment"
+            type="com.app.domain.Comment" />
 
     </data>
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:padding="@dimen/spacing_large">
+        android:paddingTop="@dimen/spacing_large"
+        android:paddingBottom="@dimen/spacing_large">
 
         <ImageView
             android:layout_width="@dimen/spacing_xxlarge"
@@ -37,11 +45,11 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:gravity="center_vertical"
-                    android:text="Susan Lee"
+                    android:text="@{comment.nameUser}"
                     android:textAppearance="@style/TextAppearance.AppCompat.Body2"
                     android:textColor="@android:color/black"
                     android:textStyle="bold"
-                    app:fontFamily="serif" />
+                    tools:text="Albert" />
 
 
                 <ImageView
@@ -58,10 +66,10 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:gravity="center_vertical"
-                    android:text="hace 3 horas"
+                    android:text="@{comment.timeRegister}"
                     android:textAppearance="@style/TextAppearance.AppCompat.Small"
                     android:textColor="@color/grey_40"
-                    app:fontFamily="serif" />
+                    tools:text="hace 3 horas" />
 
             </LinearLayout>
 
@@ -71,10 +79,10 @@
                 android:layout_marginTop="@dimen/spacing_small"
                 android:gravity="center_vertical"
                 android:lineSpacingExtra="@dimen/spacing_small"
-                android:text="Cursus convallis dolor. Etiam vel lacinia nibh. Donec sollicitudin fermentum"
+                android:text="@{comment.commentText}"
                 android:textAppearance="@style/TextAppearance.AppCompat.Body1"
                 android:textColor="@color/grey_60"
-                app:fontFamily="serif" />
+                tools:text="Cursus convallis dolor. Etiam vel lacinia nibh. Donec sollicitudin fermentum" />
 
         </LinearLayout>
 
