@@ -1,5 +1,6 @@
 package com.app.presentation.data.firebase
 
+import android.util.Log
 import arrow.core.Either
 import com.app.data.datasource.CommentFirebaseRemoteDataSource
 import com.app.domain.Comment
@@ -11,6 +12,7 @@ import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.ValueEventListener
 import com.google.firebase.database.ktx.database
 import com.google.firebase.ktx.Firebase
+import com.google.gson.Gson
 import kotlinx.coroutines.channels.awaitClose
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.callbackFlow
@@ -31,6 +33,7 @@ class CommentFirebaseServerDataSource @Inject constructor(@ApiKey private val ap
                                 ?.let { listComments.add(it) }
                         }
                         listComments.sortByDescending { it.timeRegister }
+                        Log.d("COMMENTS", Gson().toJson(listComments))
                         trySend(listComments.toDomain())
                     }
 

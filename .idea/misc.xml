@@ -14,6 +14,7 @@
         <entry key="app/src/main/res/layout/fragment_list_places.xml" value="0.23177083333333334" />
         <entry key="app/src/main/res/layout/item_place.xml" value="0.335" />
         <entry key="app/src/main/res/layout/view_place.xml" value="0.1693840579710145" />
+        <entry key="feature_login/presentation/src/main/res/layout/fragment_sing_in.xml" value="0.1328125" />
         <entry key="feature_login/src/main/res/layout/fragment_sign_in.xml" value="0.17028985507246377" />
         <entry key="feature_places/presentation/src/main/res/drawable/eleme.xml" value="0.1305" />
         <entry key="feature_places/presentation/src/main/res/drawable/image.xml" value="0.135" />

@@ -3,6 +3,9 @@
   <component name="CompilerConfiguration">
     <bytecodeTargetLevel target="1.7">
       <module name="ProjectGroup3.app" target="11" />
+      <module name="ProjectGroup3.buildSrc" target="11" />
+      <module name="ProjectGroup3.buildSrc.main" target="11" />
+      <module name="ProjectGroup3.buildSrc.test" target="11" />
       <module name="ProjectGroup3.feature_login.presentation" target="11" />
       <module name="ProjectGroup3.feature_places.data" target="1.8" />
       <module name="ProjectGroup3.feature_places.data.main" target="1.8" />
