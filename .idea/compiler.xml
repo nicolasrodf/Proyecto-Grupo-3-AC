@@ -14,6 +14,9 @@
       <module name="ProjectGroup3.feature_places.domain.main" target="1.8" />
       <module name="ProjectGroup3.feature_places.domain.test" target="1.8" />
       <module name="ProjectGroup3.feature_places.presentation" target="11" />
+      <module name="ProjectGroup3.feature_places.usecases" target="1.8" />
+      <module name="ProjectGroup3.feature_places.usecases.main" target="1.8" />
+      <module name="ProjectGroup3.feature_places.usecases.test" target="1.8" />
       <module name="ProjectGroup3.lib.firebase" target="1.8" />
       <module name="ProjectGroup3.lib.firebase.main" target="1.8" />
       <module name="ProjectGroup3.lib.firebase.test" target="1.8" />

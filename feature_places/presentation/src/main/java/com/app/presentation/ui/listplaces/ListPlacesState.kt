@@ -1,5 +1,6 @@
 package com.app.presentation.ui.listplaces
 
+import android.Manifest
 import android.content.Context
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.lifecycleScope
@@ -8,23 +9,38 @@ import androidx.navigation.fragment.findNavController
 import com.app.domain.Error
 import com.app.domain.Place
 import com.app.presentation.R
+import com.app.presentation.ui.common.PermissionRequester
 import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.launch
 
 fun Fragment.buildMainState(
     context: Context = requireContext(),
     scope: CoroutineScope = viewLifecycleOwner.lifecycleScope,
-    navController: NavController = findNavController()
-) = ListPlacesState(context, scope, navController)
+    navController: NavController = findNavController(),
+    locationPermissionRequester: PermissionRequester = PermissionRequester(
+        this,
+        Manifest.permission.ACCESS_COARSE_LOCATION
+    )
+) = ListPlacesState(context, scope, navController, locationPermissionRequester)
 
 class ListPlacesState(
     private val context: Context,
     private val scope: CoroutineScope,
-    private val navController: NavController
+    private val navController: NavController,
+    private val locationPermissionRequester: PermissionRequester
+
 ) {
     fun onPlaceClicked(place: Place) {
         val action =
             ListPlacesFragmentDirections.actionListPlacesFragmentToDetailPlaceFragment(place.id)
         navController.navigate(action)
+    }
+
+    fun requestLocationPermission(afterRequest: (Boolean) -> Unit) {
+        scope.launch {
+            val result = locationPermissionRequester.request()
+            afterRequest(result)
+        }
     }
 
     fun errorToString(error: Error) = when (error) {

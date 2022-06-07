@@ -9,13 +9,15 @@ import javax.inject.Inject
 
 class PlacesRepository @Inject constructor(
     private val localDataSource: PlaceLocalDataSource,
-    private val remoteDataSource: PlaceRemoteDataSource
+    private val remoteDataSource: PlaceRemoteDataSource,
+    private val regionRepository: RegionRepository,
 ) {
     fun getPopularPlaces() = localDataSource.places
 
     fun findById(id: Int): Flow<Place> = localDataSource.findByIdWithImages(id)
 
     suspend fun requestPopularMovies(): Error? {
+        val region = regionRepository.findLastRegion()
         if (localDataSource.isEmpty()) {
             val places = remoteDataSource.findPopularPlaces()
             places.fold(ifLeft = { return it }) { localDataSource.save(it) }

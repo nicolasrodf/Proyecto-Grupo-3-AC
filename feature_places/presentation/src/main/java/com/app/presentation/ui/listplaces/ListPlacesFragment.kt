@@ -30,8 +30,8 @@ class ListPlacesFragment : Fragment(R.layout.fragment_list_places) {
             binding.error = it.error?.let(listPlacesState::errorToString)
         }
 
-        viewModel.onUiReady()
+        listPlacesState.requestLocationPermission {
+            viewModel.onUiReady()
+        }
     }
-
-
 }

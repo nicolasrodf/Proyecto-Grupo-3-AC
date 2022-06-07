@@ -2,14 +2,18 @@ package com.app.presentation.di
 
 import android.app.Application
 import androidx.room.Room
+import com.app.data.PermissionChecker
 import com.app.data.datasource.CommentFirebaseRemoteDataSource
+import com.app.data.datasource.LocationDataSource
 import com.app.data.datasource.PlaceLocalDataSource
 import com.app.data.datasource.PlaceRemoteDataSource
 import com.app.presentation.R
-import com.app.presentation.data.database.PlaceRoomDataSource
-import com.app.presentation.data.server.PlaceServerDataSource
+import com.app.presentation.data.AndroidPermissionChecker
+import com.app.presentation.data.PlayServicesLocationDataSource
 import com.app.presentation.data.database.PlaceDataBase
+import com.app.presentation.data.database.PlaceRoomDataSource
 import com.app.presentation.data.firebase.CommentFirebaseServerDataSource
+import com.app.presentation.data.server.PlaceServerDataSource
 import dagger.Binds
 import dagger.Module
 import dagger.Provides
@@ -46,7 +50,7 @@ object AppModule {
 @InstallIn(SingletonComponent::class)
 abstract class AppDataModule {
     @Binds
-    abstract fun bindLocalDataSource(localDataSource: PlaceRoomDataSource):PlaceLocalDataSource
+    abstract fun bindLocalDataSource(localDataSource: PlaceRoomDataSource): PlaceLocalDataSource
 
     @Binds
     abstract fun bindRemoteDataSource(remoteDataSource: PlaceServerDataSource): PlaceRemoteDataSource
@@ -54,4 +58,9 @@ abstract class AppDataModule {
     @Binds
     abstract fun bindRemoteFirebaseComments(commentFirebaseServerDataSource: CommentFirebaseServerDataSource): CommentFirebaseRemoteDataSource
 
+    @Binds
+    abstract fun bindingLocationDataSource(locationDataSource: PlayServicesLocationDataSource): LocationDataSource
+
+    @Binds
+    abstract fun bindPermissionChecker(permissionChecker: AndroidPermissionChecker): PermissionChecker
 }
