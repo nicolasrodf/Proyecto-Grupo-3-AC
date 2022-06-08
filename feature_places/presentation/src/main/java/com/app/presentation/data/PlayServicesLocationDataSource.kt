@@ -4,7 +4,7 @@ import android.annotation.SuppressLint
 import android.app.Application
 import android.location.Geocoder
 import android.location.Location
-import com.app.data.datasource.LocationDataSource
+import com.app.featureplaces.data.datasource.LocationDataSource
 import com.google.android.gms.location.LocationServices
 import kotlinx.coroutines.suspendCancellableCoroutine
 import javax.inject.Inject

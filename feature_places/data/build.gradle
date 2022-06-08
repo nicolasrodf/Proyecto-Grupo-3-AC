@@ -8,6 +8,7 @@ plugins {
 
 dependencies {
     implementation project(":feature_places:domain")
+    implementation project(":testShared")
 
     implementation Libs.Kotlin.Coroutines.core
     implementation Libs.JavaX.inject

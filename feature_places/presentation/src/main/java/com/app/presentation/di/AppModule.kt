@@ -2,11 +2,11 @@ package com.app.presentation.di
 
 import android.app.Application
 import androidx.room.Room
-import com.app.data.PermissionChecker
-import com.app.data.datasource.CommentFirebaseRemoteDataSource
-import com.app.data.datasource.LocationDataSource
-import com.app.data.datasource.PlaceLocalDataSource
-import com.app.data.datasource.PlaceRemoteDataSource
+import com.app.featureplaces.data.PermissionChecker
+import com.app.featureplaces.data.datasource.CommentFirebaseRemoteDataSource
+import com.app.featureplaces.data.datasource.LocationDataSource
+import com.app.featureplaces.data.datasource.PlaceLocalDataSource
+import com.app.featureplaces.data.datasource.PlaceRemoteDataSource
 import com.app.presentation.R
 import com.app.presentation.data.AndroidPermissionChecker
 import com.app.presentation.data.PlayServicesLocationDataSource

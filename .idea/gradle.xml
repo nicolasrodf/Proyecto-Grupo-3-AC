@@ -24,6 +24,7 @@
             <option value="$PROJECT_DIR$/feature_places/presentation" />
             <option value="$PROJECT_DIR$/feature_places/usecases" />
             <option value="$PROJECT_DIR$/lib" />
+            <option value="$PROJECT_DIR$/testShared" />
             <option value="$PROJECT_DIR$/uicomponent" />
           </set>
         </option>

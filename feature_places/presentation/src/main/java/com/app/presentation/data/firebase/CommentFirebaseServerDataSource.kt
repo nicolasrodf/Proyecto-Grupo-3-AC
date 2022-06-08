@@ -2,7 +2,7 @@ package com.app.presentation.data.firebase
 
 import android.util.Log
 import arrow.core.Either
-import com.app.data.datasource.CommentFirebaseRemoteDataSource
+import com.app.featureplaces.data.datasource.CommentFirebaseRemoteDataSource
 import com.app.domain.Comment
 import com.app.domain.Error
 import com.app.presentation.data.tryCall

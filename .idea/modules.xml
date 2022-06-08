@@ -39,6 +39,9 @@
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/feature_places/usecases/ProjectGroup3.feature_places.usecases.main.iml" filepath="$PROJECT_DIR$/.idea/modules/feature_places/usecases/ProjectGroup3.feature_places.usecases.main.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/feature_places/usecases/ProjectGroup3.feature_places.usecases.test.iml" filepath="$PROJECT_DIR$/.idea/modules/feature_places/usecases/ProjectGroup3.feature_places.usecases.test.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/lib/ProjectGroup3.lib.iml" filepath="$PROJECT_DIR$/.idea/modules/lib/ProjectGroup3.lib.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/testShared/ProjectGroup3.testShared.iml" filepath="$PROJECT_DIR$/.idea/modules/testShared/ProjectGroup3.testShared.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/testShared/ProjectGroup3.testShared.main.iml" filepath="$PROJECT_DIR$/.idea/modules/testShared/ProjectGroup3.testShared.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/testShared/ProjectGroup3.testShared.test.iml" filepath="$PROJECT_DIR$/.idea/modules/testShared/ProjectGroup3.testShared.test.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/uicomponent/ProjectGroup3.uicomponent.iml" filepath="$PROJECT_DIR$/.idea/modules/uicomponent/ProjectGroup3.uicomponent.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/uicomponent/ProjectGroup3.uicomponent.androidTest.iml" filepath="$PROJECT_DIR$/.idea/modules/uicomponent/ProjectGroup3.uicomponent.androidTest.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/uicomponent/ProjectGroup3.uicomponent.main.iml" filepath="$PROJECT_DIR$/.idea/modules/uicomponent/ProjectGroup3.uicomponent.main.iml" />

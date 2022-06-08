@@ -20,6 +20,9 @@
       <module name="ProjectGroup3.lib.firebase" target="1.8" />
       <module name="ProjectGroup3.lib.firebase.main" target="1.8" />
       <module name="ProjectGroup3.lib.firebase.test" target="1.8" />
+      <module name="ProjectGroup3.testShared" target="1.8" />
+      <module name="ProjectGroup3.testShared.main" target="1.8" />
+      <module name="ProjectGroup3.testShared.test" target="1.8" />
       <module name="ProjectGroup3.uicomponent" target="11" />
     </bytecodeTargetLevel>
   </component>

@@ -5,8 +5,8 @@ import androidx.lifecycle.viewModelScope
 import com.app.domain.Error
 import com.app.domain.Place
 import com.app.presentation.data.toError
-import com.app.usecases.GetPopularPlacesUseCase
-import com.app.usecases.RequestPopularPlacesUseCase
+import com.app.featureplaces.usecases.GetPopularPlacesUseCase
+import com.app.featureplaces.usecases.RequestPopularPlacesUseCase
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.*
 import kotlinx.coroutines.launch

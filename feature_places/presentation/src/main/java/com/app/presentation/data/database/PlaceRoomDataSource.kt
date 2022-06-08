@@ -1,7 +1,6 @@
 package com.app.presentation.data.database
 
-import android.util.Log
-import com.app.data.datasource.PlaceLocalDataSource
+import com.app.featureplaces.data.datasource.PlaceLocalDataSource
 import com.app.domain.Error
 import com.app.domain.ImagePlace
 import com.app.domain.Place

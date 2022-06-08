@@ -44,6 +44,7 @@ dependencies {
     implementation project(":feature_places:domain")
     implementation project(":feature_places:data")
     implementation project(":uicomponent")
+    implementation project(":testShared")
 
     implementation Libs.AndroidX.coreKtx
     implementation Libs.AndroidX.appCompat

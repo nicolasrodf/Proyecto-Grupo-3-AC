@@ -1,7 +1,7 @@
 package com.app.presentation.data.server
 
 import arrow.core.Either
-import com.app.data.datasource.PlaceRemoteDataSource
+import com.app.featureplaces.data.datasource.PlaceRemoteDataSource
 import com.app.domain.Error
 import com.app.domain.ImagePlace
 import com.app.domain.Place

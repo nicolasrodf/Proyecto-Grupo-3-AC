@@ -8,10 +8,10 @@ import com.app.domain.Error
 import com.app.domain.Place
 import com.app.presentation.data.toError
 import com.app.presentation.ui.common.getDateTime
-import com.app.usecases.FindPlaceUseCase
-import com.app.usecases.GetCommentsOfPlaceUseCase
-import com.app.usecases.SaveCommentOfPlaceUseCase
-import com.app.usecases.SwitchPlaceFavoriteUseCase
+import com.app.featureplaces.usecases.FindPlaceUseCase
+import com.app.featureplaces.usecases.GetCommentsOfPlaceUseCase
+import com.app.featureplaces.usecases.SaveCommentOfPlaceUseCase
+import com.app.featureplaces.usecases.SwitchPlaceFavoriteUseCase
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.*
 import kotlinx.coroutines.launch
