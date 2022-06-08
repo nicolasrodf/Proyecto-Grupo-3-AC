@@ -12,6 +12,7 @@ object Libs {
         object Coroutines {
             private const val version = "1.6.1"
             const val core = "org.jetbrains.kotlinx:kotlinx-coroutines-core:$version"
+            const val test = "org.jetbrains.kotlinx:kotlinx-coroutines-test:$version"
         }
     }
 
@@ -19,7 +20,7 @@ object Libs {
         private const val version = "4.3.10"
         const val gradlePlugin = "com.google.gms:google-services:$version"
 
-        object Firebase{
+        object Firebase {
             private const val version = "30.0.1"
             private const val versionAuth = "8.0.1"
             const val bom = "com.google.firebase:firebase-bom:$version"
